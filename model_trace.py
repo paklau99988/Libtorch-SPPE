@@ -8,7 +8,7 @@ class InferenNet(nn.Module):
     def __init__(self):
         super(InferenNet, self).__init__()
         model = createModel()
-        model.load_state_dict(torch.load('./models/sppe/duc_se.pth'))
+        model.load_state_dict(torch.load('duc_se.pth', map_location=torch.device('cpu')))
         model.eval()
         self.pyranet = model
 
